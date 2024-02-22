@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Example</title>
+    <script type="text/javascript">
+        // Event listener for the window resize event
+        window.addEventListener('resize', function() {
+            console.log("Window resized. New inner height: " + window.innerHeight + ", new inner width: " + window.innerWidth);
+        });
+
+        // Function to be called when the button is clicked
+        function myFunction() {
+            var userName = prompt("Please enter your name:");
+            var userAge = prompt("Please enter your age:");
+
+            if (userAge < 18) {
+                document.getElementById("result").innerHTML = "Hello " + userName + ", you are not allowed to use this website. Go play with your friends.";
+            } else {
+                document.getElementById("result").innerHTML = "Hello " + userName + ", you are allowed to use this website.";
+            }
+        }
+
+        // Function to be called every 2 seconds
+        setInterval(function() {
+            console.log("2 seconds have passed.");
+        }, 2000);
+
+        // Function to be called once after 5 seconds
+        setTimeout(function() {
+            console.log("5 seconds have passed.");
+        }, 5000);
+
+        // Function to open a new window
+        function openNewWindow() {
+            var newWindow = window.open("https://www.example.com", "New Window", "width=600,height=400");
+            newWindow.moveTo(0, 0);
+            newWindow.resizeTo(screen.width, screen.height);
+            newWindow.focus();
+        }
+
+        // Function to close the new window
+        function closeNewWindow() {
+            newWindow.close();
+        }
+
+        // Function to stop the timer
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        // Function to print the page
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript Example</h1>
+    <p>This example demonstrates how to use javascript in an HTML document with various events, event listeners, and window object properties and methods.</p>
+    <button onclick="myFunction()">Click me</button>
+    <p id="result"></p>
+    <button onclick="openNewWindow()">Open new window</button>
+    <button onclick="closeNewWindow()">Close new window</button>
+    <button onclick="stopTimer()">Stop timer</button>
+    <button onclick="printPage()">Print page</button>
+</body>
+</html>
